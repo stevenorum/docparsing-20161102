@@ -23,7 +23,7 @@ new_lines = []
 
 for line in lines:
 	pieces = line.split("... ")
-	key = pieces[0].strip(".").strip()
+	key = pieces[0].strip(".").strip().replace(",","")
 	values = pieces[1].replace(",","").replace("...","?").split(" ")
 	new_lines += [",".join([key]+values)]
 with open(oname, "w") as file:
